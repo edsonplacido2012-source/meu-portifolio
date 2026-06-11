@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Alana - Portfólio de Desenhos</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Bale&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Bale&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #6eb88d;
       color: #9b68dd;
-      font-family: 'Bale', Arial, sans-serif;
+     font-family: 'Bale', Arial, sans-serif;
       text-align: center;
-      padding: 50px;
       margin: 0;
+      padding: 0;
     }
 
     h1 {
@@ -19,14 +19,71 @@
       font-size: 48px;
       margin-bottom: 5px;
       font-family: 'UnifrakturMaguntia', cursive;
+      padding-top: 30px;
+    }
+
+    .foto-perfil {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px auto;
+      border: 4px solid #9b68dd;
+    }
+
+    .foto-perfil img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .subtitulo {
       font-size: 20px;
       color: #9b68dd;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
 
+    /* MENU DE ABAS */
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .menu button {
+      background-color: #4a0080;
+      color: #e0b3ff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: 'UnifrakturMaguntia', cursive;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu button:hover {
+      background-color: #9b68dd;
+      color: white;
+    }
+
+    .menu button.ativo {
+      background-color: #9b68dd;
+      color: white;
+    }
+
+    /* ABAS */
+    .aba {
+      display: none;
+      padding: 20px;
+    }
+
+    .aba.ativa {
+      display: block;
+    }
+
+    /* GALERIA */
     h2 {
       color: #9b68dd;
       font-size: 30px;
@@ -51,14 +108,11 @@
       justify-content: center;
       color: #e0b3ff;
       font-size: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
     }
-    .sobre {
-      background-color: #4a0080;
-      border-radius: 16px;
-      padding: 30px;
-      max-width: 600px;
-      margin: 0 auto 50px auto;
-    }
+
     .card img {
       width: 100%;
       height: 100%;
@@ -69,28 +123,6 @@
 
     .card:hover img {
       transform: scale(1.1);
-    }
-
-    .card {
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .foto-perfil {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 20px auto;
-      border: 4px solid #9b68dd;
-    }
-
-    .foto-perfil img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .card {
-      position: relative;
     }
 
     .card-titulo {
@@ -110,40 +142,83 @@
     .card:hover .card-titulo {
       opacity: 1;
     }
+
+    /* SOBRE MIM */
+    .sobre {
+      background-color: #4a0080;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #e0b3ff;
     }
   </style>
 </head>
 <body>
 
   <h1>Alana</h1>
+
   <div class="foto-perfil">
     <img src="img/eu.jpeg" alt="Foto de perfil">
   </div>
+
   <p class="subtitulo">Amo desenhar desde pequena, vem ver minha evolução! ✏️</p>
-  <section class="sobre">
-    <h2>Sobre mim</h2>
-    <p>Oi! Eu sou a Alana, tenho 14 anos e amo desenhar desde pequena.</p>
-    <p>Aqui você vai encontrar minha evolução como artista — cada desenho conta uma história!</p>
-  </section>
-  <h2>Meus Desenhos</h2>
-  <div class="galeria">
-<div class="card">
-      <img src="img/alanadesenho.jpeg" alt="Alya dentro do mar">
+
+  <!-- MENU -->
+  <div class="menu">
+    <button class="ativo" onclick="mostrarAba('inicio')">Início</button>
+    <button onclick="mostrarAba('galeria')">Galeria</button>
+    <button onclick="mostrarAba('sobre')">Sobre mim</button>
+  </div>
+
+  <!-- ABA INÍCIO -->
+  <div id="inicio" class="aba ativa">
+    <h2>Bem-vinda ao meu portfólio! 🎨</h2>
+    <p>Aqui você encontra meus desenhos e um pouco da minha história.</p>
+    <p>Explore as abas acima! 💜</p>
+  </div>
+
+  <!-- ABA GALERIA -->
+  <div id="galeria" class="aba">
+    <h2>Meus Desenhos</h2>
+    <div class="galeria">
+      <div class="card">
+        <img src="img/alanadesenho.jpeg" alt="Desenho 1">
         <div class="card-titulo">Alya dentro do mar</div>
-    </div>
-    <div class="card">
-      <img src="img/alanadesenho-2.jpeg" alt="Alya">
-       <div class="card-titulo">Alya</div>
-    </div>
-    <div class="card">
-      <img src="img/alanadesenho-3.jpeg" alt=É assim que acaba?">
+      </div>
+      <div class="card">
+        <img src="img/alanadesenho-2.jpeg" alt="Desenho 2">
+        <div class="card-titulo">Alya</div>
+      </div>
+      <div class="card">
+        <img src="img/alanadesenho-3.jpeg" alt="Desenho 3">
         <div class="card-titulo">É assim que acaba</div>
-    </div>
-    <div class="card">
-      <img src="img/alanadesenho-4.jpeg" alt="Ginastica">
-          <div class="card-titulo">Ginástica</div>
+      </div>
+      <div class="card">
+        <img src="img/alanadesenho-4.jpeg" alt="Desenho 4">
+        <div class="card-titulo">Ginástica</div>
+      </div>
     </div>
   </div>
+
+  <!-- ABA SOBRE MIM -->
+  <div id="sobre" class="aba">
+    <div class="sobre">
+      <h2>Sobre mim</h2>
+      <p>Oi! Eu sou a Alana, tenho 14 anos e amo desenhar desde pequena.</p>
+      <p>Aqui você vai encontrar minha evolução como artista — cada desenho conta uma história!</p>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function mostrarAba(id) {
+      document.querySelectorAll('.aba').forEach(a => a.classList.remove('ativa'));
+      document.querySelectorAll('.menu button').forEach(b => b.classList.remove('ativo'));
+      document.getElementById(id).classList.add('ativa');
+      event.target.classList.add('ativo');
+    }
+  </script>
 
 </body>
 </html>
