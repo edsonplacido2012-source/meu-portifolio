@@ -5,29 +5,64 @@
   <title>Alana - Portfólio de Desenhos</title>
   <style>
     body {
-      background-color: #43c291;
-      color: #9b68dd;
-      font-family: UnifrakturMaguntia-Regular , Ballet-Regular-VariableFont_opsz ;
+      background-color: #6eb88d;
+      color:#9b68dd;
+      font-family: Arial, sans-serif;
       text-align: center;
       padding: 50px;
+      margin: 0;
     }
 
     h1 {
       color: #9b68dd;
       font-size: 48px;
+      margin-bottom: 5px;
     }
 
-    p {
+    .subtitulo {
       font-size: 20px;
       color: #9b68dd;
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #9b68dd;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .galeria {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #6eb88d;
+      border-radius: 12px;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e0b3ff;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
   <h1>Alana</h1>
-  <p>Amo desenhar desde pequena,vem ver minha evolução!</p>
-  <p>Seja bem-vindo ao meu portfólio!</p>
+  <p class="subtitulo">Amo desenhar desde pequena, vem ver minha evolução! ✏️</p>
+
+  <h2>Meus Desenhos</h2>
+  <div class="galeria">
+    <div class="card">Desenho 1</div>
+    <div class="card">Desenho 2</div>
+    <div class="card">Desenho 3</div>
+    <div class="card">Desenho 4</div>
+  </div>
 
 </body>
 </html>
